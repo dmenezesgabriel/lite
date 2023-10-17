@@ -1,7 +1,8 @@
 import plotly.express as px
 import streamlit as st
 
-st.set_page_config(page_title="Plotly Chart")
+st.set_page_config(page_title="Stlite - Plotly Chart")
+st.title("Plotly")
 
 code = """
 import plotly.express as px

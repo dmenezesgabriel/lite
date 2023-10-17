@@ -2,7 +2,7 @@ import pandas as pd
 import streamlit as st
 from pyodide.http import open_url
 
-st.set_page_config(page_title="Page1")
+st.set_page_config(page_title="Stlite - Fetch Data")
 st.title("Fetch Data")
 
 code = """

@@ -1,6 +1,10 @@
 import micropip
 import streamlit as st
 
+st.set_page_config(page_title="Stlite - Install Packages")
+st.title("Install Packages")
+
+
 code = """
 import micropip
 
