@@ -34,32 +34,33 @@
           entrypoint: "streamlit_app.py",
           files: {
             // Main page
-            "streamlit_app.py": { url: "./stlite/streamlit_app.py" },
+            "streamlit_app.py": { url: "./streamlit_app.py" },
             // Pages
             "pages/0_installed_packages.py": {
-              url: "./stlite/pages/0_installed_packages.py",
+              url: "./pages/0_installed_packages.py",
             },
-            "pages/1_fetch_data.py": { url: "./stlite/pages/1_fetch_data.py" },
+            "pages/1_fetch_data.py": { url: "./pages/1_fetch_data.py" },
             "pages/2_install_package.py": {
-              url: "./stlite/pages/2_install_package.py",
+              url: "./pages/2_install_package.py",
             },
             "pages/3_plotly_chart.py": {
-              url: "./stlite/pages/3_plotly_chart.py",
+              url: "./pages/3_plotly_chart.py",
             },
             // Utils
-            "utils/code_runner.py": { url: "./stlite/utils/code_runner.py" },
-            "utils/shorten_urls.py": { url: "./stlite/utils/shorten_urls.py" },
+            "utils/code_runner.py": { url: "./utils/code_runner.py" },
+            "utils/shorten_urls.py": { url: "./utils/shorten_urls.py" },
             // Config
             ".streamlit/config.toml": {
-              url: "./stlite/.streamlit/config.toml",
+              url: "./.streamlit/config.toml",
             },
             // Static
             "static/streamlit-logo.png": {
-              url: "./stlite/static/streamlit-logo.png",
+              url: "./static/streamlit-logo.png",
             },
           },
-          pyodideUrl:
-            "https://cdn.jsdelivr.net/pyodide/v0.23.3/full/pyodide.js",
+          // pyodide-0.23.3.tar.bz2
+          // vscode live server
+          pyodideUrl: "http://127.0.0.1:5500/pyodide/pyodide.js",
         },
         document.querySelector("#root")
       );
