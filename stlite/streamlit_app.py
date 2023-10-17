@@ -9,7 +9,11 @@ from utils.shorten_urls import get_code_params, set_code_params
 streamlit_version = st.__version__
 python_version = sys.version
 
-st.set_page_config(page_title="Stlite - Playground")
+st.set_page_config(
+    page_title="Stlite - Playground",
+    layout="wide",
+    initial_sidebar_state="expanded",
+)
 st.title("Playground")
 
 if "python" not in st.session_state:
