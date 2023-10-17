@@ -23,5 +23,5 @@ with st.expander("Code", expanded=True):
         min_lines=20,
     )
 
-execute(st.session_state["python"])
+await execute(st.session_state["python"])
 set_code_params()
