@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+      const app = document.getElementById("app");
+
+      function App() {
+        const [applicationId, setApplicationId] = React.useState("stlite");
+
+        const applications = {
+          stlite: {
+            id: "stlite",
+            url: "./stlite/index.html",
+            height: "600px",
+            width: "500px",
+          },
+          jupyterlite: {
+            id: "jupyterlite",
+            url: "./jupyterlite/_output/index.html",
+            height: "600px",
+            width: "500px",
+          },
+        };
+
+        return (
+          <div>
+            <h1>Pyodide WASM</h1>
+
+            <div>
+              <button
+                onClick={() => {
+                  setApplicationId("stlite");
+                }}
+              >
+                stlite
+              </button>
+              <button
+                onClick={() => {
+                  setApplicationId("jupyterlite");
+                }}
+              >
+                jupyterlite
+              </button>
+            </div>
+
+            <div>
+              <iframe
+                id={applications[applicationId].id}
+                src={applications[applicationId].url}
+                height={applications[applicationId].height}
+                width={applications[applicationId].width}
+              ></iframe>
+            </div>
+          </div>
+        );
+      }
+
+      ReactDOM.render(<App />, app);
+    </script>
+  </body>
+</html>

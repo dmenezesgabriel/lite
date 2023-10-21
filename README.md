@@ -1,3 +1,4 @@
 # Lite
 
 - Stlite
+- Jupyterlite
