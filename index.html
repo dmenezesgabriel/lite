@@ -20,21 +20,15 @@
           stlite: {
             id: "stlite",
             url: "./stlite/index.html",
-            height: "600px",
-            width: "500px",
           },
           jupyterlite: {
             id: "jupyterlite",
             url: "./jupyterlite/_output/index.html",
-            height: "600px",
-            width: "500px",
           },
         };
 
         return (
           <div>
-            <h1>Pyodide WASM</h1>
-
             <div>
               <button
                 onClick={() => {
@@ -56,8 +50,9 @@
               <iframe
                 id={applications[applicationId].id}
                 src={applications[applicationId].url}
-                height={applications[applicationId].height}
-                width={applications[applicationId].width}
+                height="600px"
+                width="1200px"
+                frameBorder="0"
               ></iframe>
             </div>
           </div>
