@@ -3,3 +3,4 @@ _output/
 *.db
 *.tar.bz2
 pyodide/
+site/

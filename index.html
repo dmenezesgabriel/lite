@@ -25,6 +25,10 @@
             id: "jupyterlite",
             url: "./jupyterlite/_output/index.html",
           },
+          shinylive: {
+            id: "shinylive",
+            url: "./shinylive/site/index.html",
+          },
         };
 
         return (
@@ -43,6 +47,13 @@
                 }}
               >
                 jupyterlite
+              </button>
+              <button
+                onClick={() => {
+                  setApplicationId("shinylive");
+                }}
+              >
+                ShinyLive
               </button>
             </div>
 
