@@ -34,27 +34,18 @@
         return (
           <div>
             <div>
-              <button
-                onClick={() => {
-                  setApplicationId("stlite");
-                }}
-              >
-                stlite
-              </button>
-              <button
-                onClick={() => {
-                  setApplicationId("jupyterlite");
-                }}
-              >
-                jupyterlite
-              </button>
-              <button
-                onClick={() => {
-                  setApplicationId("shinylive");
-                }}
-              >
-                ShinyLive
-              </button>
+              {Object.keys(applications).map((key) => {
+                return (
+                  <button
+                    key={key}
+                    onClick={() => {
+                      setApplicationId(key);
+                    }}
+                  >
+                    {key}
+                  </button>
+                );
+              })}
             </div>
 
             <div>
