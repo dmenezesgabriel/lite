@@ -4,12 +4,23 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.11.0/cdn/themes/light.css"
+    />
   </head>
   <body>
     <div id="app"></div>
     <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
     <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script
+      type="module"
+      src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.11.0/cdn/shoelace-autoloader.js"
+    ></script>
+
     <script type="text/babel">
       const app = document.getElementById("app");
 
@@ -36,19 +47,19 @@
             <div>
               {Object.keys(applications).map((key) => {
                 return (
-                  <button
+                  <sl-button
                     key={key}
                     onClick={() => {
                       setApplicationId(key);
                     }}
                   >
                     {key}
-                  </button>
+                  </sl-button>
                 );
               })}
             </div>
 
-            <div>
+            <div className="iframe-container">
               <iframe
                 id={applications[applicationId].id}
                 src={applications[applicationId].url}
