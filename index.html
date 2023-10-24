@@ -25,49 +25,53 @@
       const app = document.getElementById("app");
 
       function App() {
-        const [applicationId, setApplicationId] = React.useState("stlite");
-
-        const applications = {
-          stlite: {
-            id: "stlite",
-            url: "./stlite/index.html",
-          },
-          jupyterlite: {
-            id: "jupyterlite",
-            url: "./jupyterlite/_output/index.html",
-          },
-          shinylive: {
-            id: "shinylive",
-            url: "./shinylive/site/index.html",
-          },
-        };
-
         return (
           <div>
-            <div>
-              {Object.keys(applications).map((key) => {
-                return (
-                  <sl-button
-                    key={key}
-                    onClick={() => {
-                      setApplicationId(key);
-                    }}
-                  >
-                    {key}
-                  </sl-button>
-                );
-              })}
-            </div>
+            <sl-tab-group>
+              <sl-tab slot="nav" panel="general">
+                Stlite (Streamlit)
+              </sl-tab>
+              <sl-tab slot="nav" panel="custom">
+                Jupyterlite (Jupyterlab)
+              </sl-tab>
+              <sl-tab slot="nav" panel="advanced">
+                Shinylive (Shiny)
+              </sl-tab>
 
-            <div className="iframe-container">
-              <iframe
-                id={applications[applicationId].id}
-                src={applications[applicationId].url}
-                height="600px"
-                width="1200px"
-                frameBorder="0"
-              ></iframe>
-            </div>
+              <sl-tab-panel name="general">
+                <div className="iframe-container">
+                  <iframe
+                    id="stlite"
+                    src="./stlite/index.html"
+                    height="600px"
+                    width="1200px"
+                    frameBorder="0"
+                  ></iframe>
+                </div>
+              </sl-tab-panel>
+              <sl-tab-panel name="custom">
+                <div className="iframe-container">
+                  <iframe
+                    id="jupyterlite"
+                    src="./jupyterlite/_output/index.html"
+                    height="600px"
+                    width="1200px"
+                    frameBorder="0"
+                  ></iframe>
+                </div>
+              </sl-tab-panel>
+              <sl-tab-panel name="advanced">
+                <div className="iframe-container">
+                  <iframe
+                    id="shinylive"
+                    src="./shinylive/site/index.html"
+                    height="600px"
+                    width="1200px"
+                    frameBorder="0"
+                  ></iframe>
+                </div>
+              </sl-tab-panel>
+            </sl-tab-group>
           </div>
         );
       }
